@@ -1,19 +1,12 @@
 const { Schema, model } = require("mongoose");
-const bcrypt = require("bcrypt");
 
 const userSchema = new Schema(
   {
-    firstName: {
+    name: {
       type: String,
-      required: [true, "User first name is required!"],
+      required: [true, "User name is required!"],
       trim: true,
-      maxlength: [30, "The length of user name can be maximum 31 characters"],
-    },
-    lastName: {
-      type: String,
-      required: [true, "User last name is required!"],
-      trim: true,
-      maxlength: [30, "The length of user name can be maximum 31 characters"],
+      maxlength: [30, "The length of user name can be maximum 30 characters"],
     },
     email: {
       type: String,
@@ -27,17 +20,15 @@ const userSchema = new Schema(
         message: "Please enter a valid email!",
       },
     },
-    phone: {
+    password: {
       type: String,
-      required: [true, "User phone is required!"],
-      minlength: [
-        11,
-        "The length of user telephone can be minimum 11 characters",
-      ],
-      maxlength: [
-        11,
-        "The length of user telephone can be maximum 11 characters",
-      ],
+      required: [true, "Password is required!"],
+      minlength: [6, "Password must be at least 6 characters long"],
+    },
+    role: {
+      type: String,
+      enum: ["customer", "seller", "admin"],
+      default: "customer",
     },
   },
   { timestamps: true }
