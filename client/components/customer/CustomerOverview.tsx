@@ -13,8 +13,9 @@ import {
 
 export function CustomerDashboard() {
   return (
-    <main className="flex-1 p-6">
-      <div className="mb-6">
+    <main className="w-full flex justify-center">
+      <div className="flex-1 p-6 container">
+          <div className="mb-6">
         <h1 className="text-2xl font-bold">
           Hi, Alex <span className="text-2xl">👋</span>
         </h1>
@@ -97,6 +98,7 @@ export function CustomerDashboard() {
           </div>
         </CardContent>
       </Card>
+      </div>
     </main>
   )
 }

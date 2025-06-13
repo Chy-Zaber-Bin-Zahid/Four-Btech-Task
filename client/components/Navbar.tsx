@@ -3,6 +3,7 @@
 import { Bell, ChevronDown, Globe, HelpCircle, Heart, Search, ShoppingBag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Link from "next/link";
 
 export default function Navbar() {
   return (
@@ -62,10 +63,12 @@ export default function Navbar() {
             <span className="hidden md:inline">Wishlist</span>
           </Button>
 
-          <Button variant="ghost" className="flex items-center gap-1">
-            <ShoppingBag className="h-5 w-5" />
-            <span className="hidden md:inline">Cart</span>
-          </Button>
+            <Link href="/cart" className="hidden md:inline text-inherit">
+              <Button variant="ghost" className="flex items-center gap-1 hover:cursor-pointer">
+                <ShoppingBag className="h-5 w-5" />
+                <span>Cart</span>
+              </Button>
+            </Link>
         </div>
       </div>
     </header>
