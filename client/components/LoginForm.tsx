@@ -100,10 +100,14 @@ export default function LoginForm() {
         </Form>
       </CardContent>
       <CardFooter className="justify-center text-center text-sm text-gray-600">
-        <div>
-          Demo credentials:
-          <div>Email: demo@example.com | Password: demo123</div>
-        </div>
+          <div>
+            Demo credentials for <strong>{role}</strong>
+            {role === "customer" ? (
+              <div>Email: tahia@example.com | Password: tahia4747</div>
+            ) : (
+              <div>Email: seller@example.com | Password: seller123</div>
+            )}
+          </div>
       </CardFooter>
     </Card>
   )
