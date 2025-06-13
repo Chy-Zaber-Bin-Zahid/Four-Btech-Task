@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
-
+    console.log(req.body)
     // Check if user exists
     const existingUser = await User.findOne({ email });
     if (!existingUser) {

@@ -105,7 +105,7 @@ export default function LoginForm() {
             {role === "customer" ? (
               <div>Email: tahia@example.com | Password: tahia4747</div>
             ) : (
-              <div>Email: seller@example.com | Password: seller123</div>
+              <div>Email: seller@example.com | Password: seller4747</div>
             )}
           </div>
       </CardFooter>
